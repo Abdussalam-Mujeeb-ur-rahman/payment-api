@@ -2,25 +2,26 @@ const axios = require("axios");
 const config = require("../config/config");
 const db = require('../model')
 const productModel = db.products
+
+
 async function paymentWithCard(req, res) {
   try {
 
     const product_id = req.params.id
-    const soldProduct = productModel.findAll({
+    const ProductToBuy = await productModel.findOne({
       where: {
-        id: product_id,
-        status: 'sold'
+        id: product_id
       }
     })
-    if(soldProduct) {
+    
+    if(ProductToBuy.status === 'sold') {
       return res.json({
-        message: 'payment not successfully!',
+        message: 'payment not successful!',
         data: 'product is sold!'
       })
     }
 
     const {
-      amount,
       email,
       phone,
       card_number,
@@ -28,10 +29,11 @@ async function paymentWithCard(req, res) {
       expiry_month,
       expiry_year,
       currency,
-      tx_ref,
+      tx_ref
     } = req.body;
+    const amount = ProductToBuy.price
 
-    const url = "https://api.flutterwave.com/v3/charges";
+    const url = 'https://www.flutterwave.ng';
     const auth_token = config.key;
     const payload = {
       amount,
@@ -49,12 +51,17 @@ async function paymentWithCard(req, res) {
       tx_ref,
     };
     try {
-      const response = await axios.post(url, payload, {
-        headers: {
-          Authorization: `Bearer ${auth_token}`,
-        },
-      });
-      const { data } = response;
+      try {
+        var response = await axios.post(url, payload, {
+          headers: {
+            Authorization: `Bearer ${auth_token}`,
+          },
+        });
+        var { data } = response;
+      } catch (error) {
+        console.log(error)
+        res.send(error)
+      }
 
       const product = await productModel.update({status: 'sold'} , {
         where: {
@@ -64,14 +71,13 @@ async function paymentWithCard(req, res) {
 
       res.status(200).json({
         message: "payment successful!",
-        data: data,
         product: product
       });
     } catch (error) {
-      console.log(`error from server, ${error.response.data}`);
+      console.log(`error from server, ${error}`);
       res.status(404).json({
         message: 'payment not successful!',
-        error: `${error.response.data}`
+        error: `${error}`
       })
     }
   } catch (error) {

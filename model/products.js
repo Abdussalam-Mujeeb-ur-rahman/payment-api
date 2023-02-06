@@ -20,7 +20,8 @@ module.exports = (sequelize, DataTypes) => {
         },
         status: {
             type: DataTypes.STRING,
-            defaultValue: "available"
+            defaultValue: "available",
+            allowNull: true
         },
         image: {
             type: DataTypes.STRING
