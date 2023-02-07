@@ -2,11 +2,11 @@ const axios = require("axios");
 const config = require("../config/config");
 const db = require('../model')
 const productModel = db.products
+const transactionModel = db.transactions
 
 
 async function paymentWithCard(req, res) {
   try {
-
     const product_id = req.params.id
     const ProductToBuy = await productModel.findOne({
       where: {
@@ -22,8 +22,6 @@ async function paymentWithCard(req, res) {
     }
 
     const {
-      email,
-      phone,
       card_number,
       cvv,
       expiry_month,
@@ -31,7 +29,10 @@ async function paymentWithCard(req, res) {
       currency,
       tx_ref
     } = req.body;
+    const email = req.user.email
+    const phone = req.user.phoneNumber
     const amount = ProductToBuy.price
+    const customer_id = req.user.id
 
     const url = 'https://www.flutterwave.ng';
     const auth_token = config.key;
@@ -69,9 +70,11 @@ async function paymentWithCard(req, res) {
           }
     })
 
+    const transaction = await transactionModel.create({ amount: amount, status: 'sent' , reference: tx_ref, custumer_ID: customer_id, product_ID: product_id })
+
       res.status(200).json({
         message: "payment successful!",
-        product: product
+        transaction
       });
     } catch (error) {
       console.log(`error from server, ${error}`);

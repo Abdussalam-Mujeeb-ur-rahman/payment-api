@@ -3,11 +3,15 @@ const bodyParser = require('body-parser')
 const app = express()
 const productRouter = require('./routes/product')
 const paymentRouter = require('./routes/payment')
+const userRouter = require('./routes/user')
 const logger = require('morgan')
 const morgan = require('morgan')
 require('dotenv').config()
 const PORT = process.env.PORT || 3030
+const authentication = require('./authentication/auth')
+const cookieParser = require('cookie-parser')
 
+app.use(cookieParser())
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
@@ -16,8 +20,9 @@ app.get('/', (req, res) => {
     res.send('welcome to my shop-api')
 })
 
-app.use('/product', productRouter)
-app.use('/payment', paymentRouter)
+app.use('/product', authentication, productRouter)
+app.use('/payment', authentication, paymentRouter)
+app.use('/user', userRouter)
 
 
 app.use((error, req, res, next) => {

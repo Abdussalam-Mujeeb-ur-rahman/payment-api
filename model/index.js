@@ -20,6 +20,8 @@ db.Sequelize = Sequelize
 
 //add models
 db.products = require('./products')(sequelize, DataTypes)
+db.users = require('./user')(sequelize, DataTypes)
+db.transactions = require('./transaction')(sequelize, DataTypes)
 
 db.sequelize.sync({force: false})
 .then(() => {
