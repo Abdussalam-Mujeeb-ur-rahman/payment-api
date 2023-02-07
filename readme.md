@@ -2,10 +2,12 @@
 
 ##This API validates debit card payment
 
+### link to postman - https://documenter.getpostman.com/view/23410424/2s935pr4Yn
+
 ##POST >> signup
 
 ```
-http://localhost:3000/user/signup
+https://abdussalam-shop-api.onrender.com/user/signup
 ```
 
 ```
@@ -20,7 +22,7 @@ http://localhost:3000/user/signup
 ## POST  >> login
 
 ```
-http://localhost:3000/user/login
+https://abdussalam-shop-api.onrender.com/user/login
 ```
 
 ```
@@ -34,7 +36,7 @@ http://localhost:3000/user/login
 ##POST >> add product
 
 ```
-http://localhost:3000/product
+https://abdussalam-shop-api.onrender.com/product
 ```
 
 ```
@@ -48,14 +50,14 @@ http://localhost:3000/product
 ## GET  >> get all products
 
 ```
-http://localhost:3000/product
+https://abdussalam-shop-api.onrender.com/product
 ```
 
 
 ## PUT  >> update product by Id
 
 ```
-http://localhost:3000/product/update/1
+https://abdussalam-shop-api.onrender.com/product/update/1
 ```
 1 represents the id of the product
 ```
@@ -68,7 +70,7 @@ http://localhost:3000/product/update/1
 ##  DELETE  >> delete product by Id
 
 ```
-http://localhost:3000/product/delete/6
+https://abdussalam-shop-api.onrender.com/product/delete/6
 ```
 6 represents the id of the product
 
@@ -76,7 +78,7 @@ http://localhost:3000/product/delete/6
 ##POST >> pay with card
 
 ```
-http://localhost:3000/payment/card/1
+https://abdussalam-shop-api.onrender.com/payment/card/1
 ```
 1 represent the id of the product
 
