@@ -8,14 +8,14 @@ const isAuthenticated = async (req,res,next)=>{
     const token = req.cookies['token']
     try {
         if(!token){
-            return res.send('you are currently unauthorized!. Please login or signup')
+            return res.send('token not available!. you are currently unauthorized!. Please login or signup')
         }
         try {
             var verify = jwt.verify(token, process.env.JWT_SECRET);
            
         } catch (error) {
             console.log(`error from verify ${error}`)
-             return res.send('you are currently unauthorized!. Please login or signup')
+             return res.send('jwt expired!. you are currently unauthorized!. Please login or signup')
         }
 
         const id = verify.id
@@ -27,7 +27,6 @@ const isAuthenticated = async (req,res,next)=>{
             console.log(`error from userModel ${error}`)
             res.send('Database timeout!, please refresh your page or try again later!')
         }
-
         next();
     } catch (error) {
        return next(error); 
