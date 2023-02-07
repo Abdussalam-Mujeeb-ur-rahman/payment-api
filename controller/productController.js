@@ -48,6 +48,12 @@ async function updateProductById(req, res){
 async function deleteProductById(req, res){
     const productId = req.params.id
     try {
+        const findProduct = await productModel.findOne({
+            where: { id: productId }
+        })
+        if(!findProduct){
+            return res.send('product not found!, it probably might have been deleted!')
+        }
         const product = await productModel.destroy({
             where: { id: productId }
         })
