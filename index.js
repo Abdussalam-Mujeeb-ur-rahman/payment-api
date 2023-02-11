@@ -11,13 +11,17 @@ const PORT = process.env.PORT || 3030
 const authentication = require('./authentication/auth')
 const cookieParser = require('cookie-parser')
 
+app.use(express.static('views'))
+app.set('view engine', 'ejs')
+app.set('views', 'views')
+
 app.use(cookieParser())
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
-    res.send('welcome to my shop-api')
+    res.render('homePage')
 })
 
 app.use('/product', authentication, productRouter)

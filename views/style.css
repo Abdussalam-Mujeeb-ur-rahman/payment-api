@@ -1,0 +1,163 @@
+*, *::before, *::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+    transition: all .5s;
+}
+
+main{
+    background: url('bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+h1{
+    font-size: 3rem;
+}
+
+h2{
+    transition: all .5s;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+p{
+    font-size: 20px;
+}
+
+a{
+    padding: 5px;
+    border-radius: 3px;
+    background-color: green;
+    text-decoration: none;
+    transition: all .5s;
+}
+
+a:hover{
+    color: green;
+    background-color: whitesmoke;
+}
+
+.sideHead{
+    color: green;
+    margin-left: 0;
+    padding: 10px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: whitesmoke;
+    display: inline;
+}
+
+
+header, .about, .features, .calls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 150px;
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.intro > p{
+    margin-bottom: 40px;
+}
+
+img{
+    height: 70vh;
+}
+
+.link{
+    display: flex; 
+    justify-content: flex-start;
+    column-gap: 10px;
+}
+
+
+/* about section  */
+.about{
+    width: 100%;
+    background-color: whitesmoke;
+    padding-bottom: 20px;
+}
+
+.about h3{
+    color: green;
+    flex: 1 0 30%;
+    margin: 20px;
+}
+
+
+/* features and calls section */
+.features, .calls{
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.feature, .call{
+    border: 2px solid whitesmoke;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+}
+
+.information{
+    visibility: collapse;
+    text-align: center;
+    transition: all .5s;
+}
+
+.feature:hover , .call:hover {
+    box-shadow: 2px 2px 4px rgb(0, 128, 0);
+    border-radius: 15px;
+    padding: 10px;
+    transform: scale(0.99);
+}
+
+.feature:hover .information, .call:hover .information{
+    visibility: visible;
+}
+
+.letsChat{
+    background-color: whitesmoke;
+    padding-top: 40px;
+}
+
+.contactWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.letsChat .sideHead{
+    background-color: green;
+    color: whitesmoke;
+
+}
+
+.letsChat p{
+    color: green;
+    font-size: 30px;
+}
+
+/* footer  */
+footer{
+    padding: 10px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.856);
+    font-size: 18px;
+}
+
+
+
+
