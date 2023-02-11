@@ -100,7 +100,7 @@ img{
 
 .feature, .call{
     border: 2px solid whitesmoke;
-    height: 200px;
+    height: 400px;
     width: 300px;
     display: flex;
     flex-direction: column;
