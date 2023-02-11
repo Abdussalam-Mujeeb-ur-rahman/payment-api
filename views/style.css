@@ -68,7 +68,7 @@ header, .about, .features, .calls {
 }
 
 img{
-    height: 70vh;
+    height: 400px;
 }
 
 .link{
@@ -100,17 +100,22 @@ img{
 
 .feature, .call{
     border: 2px solid whitesmoke;
-    height: 300px;
+    height: 200px;
     width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: all .5s;
+    padding: 10px;    
+}
+
+.call p{
+
 }
 
 .information{
-    visibility: collapse;
+    display: none;
     text-align: center;
     transition: all .5s;
 }
@@ -118,12 +123,15 @@ img{
 .feature:hover , .call:hover {
     box-shadow: 2px 2px 4px rgb(0, 128, 0);
     border-radius: 15px;
-    padding: 10px;
     transform: scale(0.99);
 }
 
 .feature:hover .information, .call:hover .information{
-    visibility: visible;
+    display: block;
+}
+
+.call p{
+    word-break: break-all;
 }
 
 .letsChat{
