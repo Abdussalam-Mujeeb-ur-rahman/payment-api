@@ -4,7 +4,6 @@ const app = express()
 const productRouter = require('./routes/product')
 const paymentRouter = require('./routes/payment')
 const userRouter = require('./routes/user')
-const logger = require('morgan')
 const morgan = require('morgan')
 require('dotenv').config()
 const PORT = process.env.PORT || 3030

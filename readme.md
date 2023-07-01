@@ -1,4 +1,4 @@
-##SHOP-API >>> by Abdussalam Mujeeb-ur-rahman
+# PAYMENT-API >>> by Abdussalam Mujeeb-ur-rahman
 
 ##This API validates debit card payment
 
