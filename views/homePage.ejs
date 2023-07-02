@@ -4,127 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SHOP API</title>
+    <title>PAYMENT API</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
-      <header>
-        <div class="intro">
-          <h1>SHOP API</h1>
-          <p>challenge by hello world technologies</p>
-          <div class="link"><a href="https://github.com/Abdussalam-Mujeeb-ur-rahman/shop-api">GITHUB</a><a href="https://documenter.getpostman.com/view/23410424/2s935pr4Yn">POSTMAN</a></div>
+      <!-- <div class="link"><a href="https://github.com/Abdussalam-Mujeeb-ur-rahman/shop-api">GITHUB</a><a href="https://documenter.getpostman.com/view/23410424/2s935pr4Yn">POSTMAN</a></div>
+        </div> -->
+      <nav>Payment API</nav>
+      <div class="part">
+        <div>
+          <h1>Pay with your debit cards</h1>
+          <div class="link">
+            <a href="https://github.com/Abdussalam-Mujeeb-ur-rahman/shop-api"
+              >Github</a
+            ><a href="https://documenter.getpostman.com/view/23410424/2s935pr4Yn"
+              >Postman</a
+            >
+          </div>
         </div>
-        <div class="image">
-          <img src="shop.png" alt="shop" />
+        <div>
+          <div class="shadow-circle">
+            <img src="cards.png" alt="cards" class="image">
+          </div>
         </div>
-      </header>
-
-      <!-- about  -->
-      <div class="about">
-        <div class="image">
-          <img src="shop2.png" alt="shop2" />
-        </div>
+      </div>
+      <div class="part-b">
         <h3>
-          A Scalable and flexible API that enables users to buy products using
-          international card and other ways
+          The API provides a seamless and secure way for users to pay for goods and services using their debit cards. It supports both local and international cards, making it easy for businesses to accept payments from customers globally.
         </h3>
+        <p>
+          The API leverages Flutterwave's Direct Card Charge feature to process payments. This feature allows businesses to charge both local and international cards. This is particularly useful for businesses whose customers predominantly use credit/debit cards and prefer to manage payments via the business's app.
+        </p>
       </div>
-      <br />
-
-      <!-- featuresWrapper  -->
-      <div class="featuresWrapper">
-        <h2 class="sideHead">Features</h2>
-        <div class="features">
-          <div class="feature">
-            <h2>Storage</h2>
-            <p class="information">Users' information are stored conveniently</p>
-          </div>
-          <div class="feature">
-            <h2>Security</h2>
-            <p class="information">Users' accounts are free from attacks and dangers</p>
-          </div>
-          <div class="feature">
-            <h2>Availability</h2>
-            <p class="information">There is no downtime. Always available!</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- calls  -->
-      <div class="callsWrapper">
-        <h2 class="sideHead">make a call to the API</h2>
-        <div class="calls">
-          <div class="call">
-            <div class="requestUrl">
-                <h2>POST - Signup</h2><br>
-            </div><br>
-            <div class="requestBody information">
-                <p>https://abdussalam-shop-api.onrender.com/user/signup</p><br>
-                {
-                    "name": "Yolande Aglaé Colbert",
-                    "email": "stefan.wexler@hotmail.eu",
-                    "phoneNumber": "0815534221",
-                    "password": "123456"
-                  }
-            </div>
-          </div>
-          <div class="call">
-            <div class="requestUrl">
-                <h2>POST - Login</h2><br>
-            </div><br>
-            <div class="requestBody information">
-                <p>https://abdussalam-shop-api.onrender.com/user/login</p><br>
-                {
-                    "email": "stefan.wexler@hotmail.eu",
-                    "password": "123456"
-                  }
-            </div>
-          </div>
-          <div class="call">
-            <div class="requestUrl">
-                <h2>GET - get all products</h2><br>
-            </div><br>
-            <div class="requestBody information">
-                <p>
-                    https://abdussalam-shop-api.onrender.com/product
-                </p>
-            </div>
-          </div>
-          <div class="call">
-            <div class="requestUrl">
-                <h2>PUT - update product by id</h2><br>
-            </div><br>
-            <div class="requestBody information">
-                <p>https://abdussalam-shop-api.onrender.com/product/update/1</p><br>
-                {
-                    "image": "reddit.png"
-                  }
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- letsChat  -->
-      <div class="letsChat">
-        <h2 class="sideHead">built by me</h2><br><br>
-        <div class="contactWrapper">
-          <div class="contacts">
-            <div class="contact">
-                <p>twitter - @allahisrabb</p>
-            </div><br>
-            <div class="contact">
-                <p>whatsapp - +2349035169648</p>
-            </div><br>
-            <div class="contact">
-               <p>gmail - mjbabdussalam@gmail.com</p> 
-            </div>
-          </div>
-        </div>
-      </div>
-
+      <hr>
       <footer>
-        &copy; all rights served, built by ABDUSSALAM MUJEEB-UR-RAHMAN
+        all rights served.
       </footer>
     </main>
   </body>

@@ -4,165 +4,138 @@
     box-sizing: border-box;
     color: white;
     transition: all .5s;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    
 }
 
-main{
-    background: url('bg.png');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+body {
+    background-color: #101728;
 }
 
-h1{
-    font-size: 3rem;
+main {
+    padding: 8vw;
 }
 
-h2{
-    transition: all .5s;
+nav {
+    font-weight: 900;
+    font-size: 4vw;
+    text-align: center;
+    text-decoration: underline;
 }
 
-h3{
-    font-size: 2rem;
+.part {
+    padding: 10vw 0 15vw 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
 }
 
-p{
-    font-size: 20px;
+h1 {
+    font-weight: 900;
+    font-size: 15vw;
 }
 
-a{
-    padding: 5px;
-    border-radius: 3px;
-    background-color: green;
+.link {
+    margin-top: 8vw;
+    display: flex;
+    gap: .5rem;
+}
+
+.link a {
+    background: linear-gradient(#9340ff, #ff3c5f);
+    padding: 4vw;
+    color: black;
     text-decoration: none;
-    transition: all .5s;
+    border-radius: 4vw;
+    font-size: 4vw;
+    font-weight: bolder;
 }
 
-a:hover{
-    color: green;
-    background-color: whitesmoke;
-}
-
-.sideHead{
-    color: green;
-    margin-left: 0;
-    padding: 10px;
-    border-radius: 0px 5px 5px 0px;
-    background-color: whitesmoke;
-    display: inline;
-}
-
-
-header, .about, .features, .calls {
+.part > div:nth-child(2) {
+    width: 100vw;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    padding-top: 40px;
-    padding-bottom: 150px;
-    row-gap: 20px;
-    column-gap: 20px;
-}
-
-.intro > p{
-    margin-bottom: 40px;
-}
-
-img{
-    height: 400px;
-}
-
-.link{
-    display: flex; 
-    justify-content: flex-start;
-    column-gap: 10px;
 }
 
 
-/* about section  */
-.about{
-    width: 100%;
-    background-color: whitesmoke;
-    padding-bottom: 20px;
+.image {
+    border-radius: 20px;
+    max-width: 90vw;
+    box-shadow: 5px 5px 5px 5px #1f41bb;
 }
 
-.about h3{
-    color: green;
-    flex: 1 0 30%;
-    margin: 20px;
-}
-
-
-/* features and calls section */
-.features, .calls{
-    column-gap: 10px;
-    row-gap: 10px;
-}
-
-.feature, .call{
-    border: 2px solid whitesmoke;
-    height: 400px;
-    width: 300px;
+.part-b {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: all .5s;
-    padding: 10px;    
+    gap: 5vw;
+    padding-bottom: 4rem;
+}
+
+footer {
+    padding: 1rem 1rem 1rem 1rem;
+    color: grey;
+
 }
 
 
-.information{
-    display: none;
-    text-align: center;
-    transition: all .5s;
+/* responsiveness  */
+@media screen and (min-width: 500px) {
+    h1 {
+        font-size: 10vw;
+    }
+
+    .link a {
+        font-size: 3vw;
+        padding: 3vw;
+    }
+
+    .image {
+        width: 80vw;
+    }
+
+    .part-b h3 {
+        font-size: 4vw;
+    }
+
+    .part-b p {
+        font-size: 3.5vw;
+    }
 }
 
-.feature:hover , .call:hover {
-    box-shadow: 2px 2px 4px rgb(0, 128, 0);
-    border-radius: 15px;
-    transform: scale(0.99);
+@media screen and (min-width: 768px) {
+    main {
+        padding: 4vw;
+    }
+    nav {
+        text-align: left;
+    }
+    .part{
+        flex-direction: row;
+        padding: 15vw 0 25vw 0;
+    }
+    h1{
+        width: 40vw;
+        font-size: 6vw;
+        
+    }
+    .link a {
+        font-size: 2vw;
+        padding: 2vw;
+
+    }
+    .part > div:nth-child(2) {
+        width: 50vw;
+    }
+    .image {
+        width: 45vw;
+    }
+    .part-b h3 {
+        font-size: 3vw;
+    }
+
+    .part-b p {
+        font-size: 2.5vw;
+    }
 }
-
-.feature:hover .information, .call:hover .information{
-    display: block;
-}
-
-.call p{
-    word-break: break-all;
-}
-
-.letsChat{
-    background-color: whitesmoke;
-    padding-top: 40px;
-}
-
-.contactWrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-}
-
-.letsChat .sideHead{
-    background-color: green;
-    color: whitesmoke;
-
-}
-
-.letsChat p{
-    color: green;
-    font-size: 30px;
-}
-
-/* footer  */
-footer{
-    padding: 10px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.856);
-    font-size: 18px;
-}
-
-
-
-

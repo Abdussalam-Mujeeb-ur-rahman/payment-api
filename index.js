@@ -9,7 +9,9 @@ require('dotenv').config()
 const PORT = process.env.PORT || 3030
 const authentication = require('./authentication/auth')
 const cookieParser = require('cookie-parser')
+const helmet = require('helmet')
 
+app.use(helmet())
 app.use(express.static('views'))
 app.set('view engine', 'ejs')
 app.set('views', 'views')
