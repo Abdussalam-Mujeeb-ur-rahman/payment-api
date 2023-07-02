@@ -50,7 +50,7 @@ h1 {
 }
 
 .part > div:nth-child(2) {
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
